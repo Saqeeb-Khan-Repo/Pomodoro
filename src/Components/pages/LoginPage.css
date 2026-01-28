@@ -1,0 +1,24 @@
+.containers {
+  background-color: var(--bg-box);
+  width: 90%;
+  height: 70dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(94, 92, 92, 0.362);
+  margin: 50px auto;
+  border-radius: 20px;
+  padding: 20px;
+  gap: 20px;
+}
+.containers button {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+.containers input {
+  margin-top: 10px;
+  padding: 10px;
+}

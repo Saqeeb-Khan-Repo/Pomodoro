@@ -1,0 +1,338 @@
+/* 1) Base theme tokens (don’t change across themes) */
+:root {
+  --border-radius: 10px;
+  --box-shadow: 0 0 20px rgba(93, 92, 92, 0.332);
+  --primary-color: rgba(4, 4, 4, 0.548);
+}
+
+/* 2) Theme palettes */
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --text-color: #000000;
+  --bg-box: rgba(66, 64, 64, 0.067);
+  --bg-box2: rgba(66, 64, 64, 0.067);
+  --hover: rgb(222, 31, 18);
+}
+
+:root[data-theme="dark"] {
+  --bg: #000000;
+  --text-color: #ffffff;
+  --bg-box: rgb(24 24 27);
+  --bg-box2: rgb(66, 66, 66);
+  --hover: orange;
+}
+
+/* 3) Global reset & body */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-color);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* 4) Theme toggle switch */
+.mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mode label {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+.mode input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.mode span {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  background-color: gray;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+  border-radius: 30px;
+}
+
+.mode span::before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: aliceblue;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.mode input:checked + span {
+  background-color: rgb(107, 107, 228);
+}
+
+.mode input:checked + span::before {
+  transform: translateX(20px);
+}
+
+/* 5) Shared gradient text helper */
+.gradient-text {
+  background: linear-gradient(45deg, #ff3636, #27faec);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 6) Home container / timer */
+.home-container {
+  background-color: var(--bg-box);
+  width: 90%;
+  height: 70dvh;
+  margin: 50px auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid rgba(94, 92, 92, 0.362);
+}
+
+.timer-display {
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: monospace;
+  margin: 2rem 0;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 7) Controls */
+.controls button {
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: #2b2a29;
+  color: #f4f2f2;
+  transition:
+    background 0.3s,
+    transform 0.15s;
+  font-weight: 700;
+}
+
+.controls button:hover {
+  background: #38393956;
+  transform: translateY(-1px);
+}
+
+/* 8) Gradient text usage */
+.home-container p,
+.home-container li,
+.heading,
+.form label,
+.h3,
+.times {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 9) World clock */
+.world-clock {
+  background-color: var(--bg-box);
+  width: 90%;
+  height: 70dvh;
+  margin: 50px auto;
+  border-radius: 20px;
+  border: 1px solid rgba(94, 92, 92, 0.362);
+}
+
+.clocks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.clock-item {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgb(76, 74, 74);
+  cursor: pointer;
+  margin: 5px;
+  transition: transform 0.15s;
+}
+
+.clock-item:hover {
+  transform: translateY(-4px);
+}
+
+.zone-name {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #000;
+}
+
+.time {
+  font-size: 2rem;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+}
+
+/* 10) Loader */
+.app-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.loader-text {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* 11) Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  width: 70%;
+  max-width: 400px;
+  height: 70%;
+  justify-content: center;
+}
+
+.form input {
+  padding: 10px;
+  border: none;
+  font-size: 1rem;
+  background-color: #2b2a29;
+  font-weight: 700;
+  border-radius: 5px;
+  color: whitesmoke;
+}
+
+.form .btn {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  font-weight: 800;
+  margin-top: 20px;
+}
+
+.heading {
+  font-size: 3rem;
+  text-align: center;
+}
+
+/* 12) Footer */
+.footer {
+  background-color: var(--bg-box);
+  height: 100px;
+  border: 1px solid rgba(94, 92, 92, 0.362);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: auto;
+}
+
+.h3 {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+/* 13) Main clock */
+.clock {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.clock:hover {
+  transform: translateY(-5px);
+}
+
+.zone {
+  font-size: 2rem;
+}
+
+.times {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.h2{
+  font-size: 2rem;
+}
+
+/* 14) Responsive */
+@media (max-width: 700px) {
+  .time {
+    font-size: 1.3rem;
+  }
+  .zone-name {
+    font-size: 0.7rem;
+    font-weight: 800;
+  }
+  .heading {
+    font-size: 2rem;
+  }
+  .h3 {
+    font-size: 0.7rem;
+  }
+  .controls button {
+    font-size: 0.6rem;
+    padding: 0.7rem 1.4rem;
+  }
+  .zone {
+    font-size: 2rem;
+  }
+  .times {
+    font-size: 2.3rem;
+  }
+}
