@@ -104,7 +104,7 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* 6) Home container / timer */
+/* 6) Home container / Pomodoro */  
 .home-container {
   background-color: var(--bg-box);
   width: 90%;
@@ -161,8 +161,14 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.home-container p li{
+.container-li  li{
   color: var(--text-color);
+  text-align: center;
+  list-style: none;
+
+}
+.container-li{
+  margin-top: 20px;
 }
 
 /* 9) World clock */
