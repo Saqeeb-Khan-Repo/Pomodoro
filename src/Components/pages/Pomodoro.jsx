@@ -64,8 +64,6 @@ const Pomodoro = () => {
         <li>Pomodoro is an Master focused Technique:</li>
         <li> 25-minute work sessions</li>
         <li> 5-minute breaks</li>
-        <li> Built-in timer with visual progress</li>
-        <li> Track completed pomodoros</li>
       </div>
     </div>
   );
