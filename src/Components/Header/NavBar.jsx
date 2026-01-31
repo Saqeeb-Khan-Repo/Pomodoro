@@ -9,30 +9,32 @@ const SideBar = () => {
   const { theme, toggleTheme , setIsOpen , isOpen } = useTheme();
  
   return (
-    <header className="head head1">
-      <nav>
-        <button className="hamburger" onClick={() => setIsOpen(!isOpen)}>
-          <GiHamburgerMenu />
-        </button>
-        <Link to="/pomodoro">
-          <GiTomato />
-          Pomodoro
-        </Link>
-        <Link to="/timezone">
-          <BiWorld /> TimeZone
-        </Link>
-      </nav>
-      <div className="mode">
-        <label>
-          <input
-            type="checkbox"
-            onChange={toggleTheme}
-            checked={theme === "light"}
-          />
-          <span className="slider"></span>
-        </label>
-      </div>
-    </header>
+    <>
+      <header className="head head1">
+        <nav>
+          <button className="hamburger" onClick={() => setIsOpen(!isOpen)}>
+            <GiHamburgerMenu />
+          </button>
+          <Link to="/pomodoro">
+            <GiTomato />
+            Pomodoro
+          </Link>
+          <Link to="/timezone">
+            <BiWorld /> TimeZone
+          </Link>
+        </nav>
+        <div className="mode">
+          <label>
+            <input
+              type="checkbox"
+              onChange={toggleTheme}
+              checked={theme === "light"}
+            />
+            <span className="slider"></span>
+          </label>
+        </div>
+      </header>
+    </>
   );
 };
 

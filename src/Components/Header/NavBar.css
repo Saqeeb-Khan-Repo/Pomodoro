@@ -9,6 +9,7 @@
   justify-content: center;
   flex: 1;
   pointer-events: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .head1 {
   border-bottom: 1px solid rgba(56, 55, 55, 0.911);
@@ -90,6 +91,7 @@
   padding: 20px;
   transition: left 0.3s ease;
   z-index: 1002;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .sidebar.open {
@@ -111,6 +113,7 @@
   justify-content: center;
   flex: 1;
   border-right: 1px solid rgb(140, 118, 77);
+  -webkit-tap-highlight-color: transparent;
 }
 .sideContainer nav {
   display: flex;
