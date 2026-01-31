@@ -55,6 +55,7 @@ body {
   width: 40px;
   height: 20px;
   margin-left: 10px;
+  pointer-events: auto;
 }
 
 .mode input {
@@ -137,8 +138,8 @@ body {
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  background: #2b2a29;
-  color: #f4f2f2;
+  background:var(--bg-box2);
+  color:var(--text-color);
   transition:
     background 0.3s,
     transform 0.15s;
@@ -151,8 +152,6 @@ body {
 }
 
 /* 8) Gradient text usage */
-.home-container p,
-.home-container li,
 .heading,
 .form label,
 .h3,
@@ -161,6 +160,9 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.home-container p li{
+  color: var(--text-color);
 }
 
 /* 9) World clock */
@@ -273,6 +275,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: auto;
+  position: sticky;
 }
 
 .h3 {

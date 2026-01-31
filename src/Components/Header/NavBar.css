@@ -8,10 +8,10 @@
   overflow: hidden;
   justify-content: center;
   flex: 1;
- 
+  pointer-events: none;
 }
 .head1 {
-  border-bottom: 1px solid rgba(94, 92, 92, 0.362);
+  border-bottom: 1px solid rgba(56, 55, 55, 0.911);
 }
 .head nav {
   display: flex;
@@ -24,16 +24,17 @@
   background-color: rgba(118, 112, 112, 0.088);
   padding: 5px;
   border-radius: 5px;
-   color: var(--text-color);
+  color: var(--text-color);
   display: flex;
   gap: 5px;
+  pointer-events: auto;
 
   &:active {
     color: red;
   }
   &:hover {
     background: rgba(118, 112, 112, 0.323);
-    color:var(--hover);
+    color: var(--hover);
   }
 }
 .head .login {
@@ -55,9 +56,102 @@
 
 @media (max-width: 700px) {
   .head nav a {
-    font-size: 0.5rem;
+    font-size: 0.9rem;
   }
   .head .login {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
+  }
+}
+
+.hamburger {
+  font-size: 2rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  /* position: fixed; */
+  top: 10px;
+  left: 10px;
+  z-index: 1001;
+  color: var(--text-color);
+  pointer-events: auto;
+  margin-right: auto;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 250px;
+  height: 100vh;
+  background: var(--bg-box);
+  color: white;
+  padding: 20px;
+  transition: left 0.3s ease;
+  z-index: 1002;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+.sideContainer {
+  display: flex;
+  background-color: var(--bg-box);
+  cursor: pointer;
+  overflow: hidden;
+  justify-content: center;
+  flex: 1;
+  border-right: 1px solid rgb(140, 118, 77);
+}
+.sideContainer nav {
+  display: flex;
+  margin-right: auto;
+  width: 100%;
+  gap: 20px;
+  flex-direction: column;
+}
+.sideContainer nav a {
+  text-decoration: none;
+  background-color: rgba(118, 112, 112, 0.088);
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--text-color);
+  display: flex;
+  gap: 5px;
+  pointer-events: auto;
+
+  &:active {
+    color: red;
+  }
+  &:hover {
+    background: rgba(118, 112, 112, 0.323);
+    color: var(--hover);
+  }
+}
+
+.cross {
+  background: rgba(118, 112, 112, 0.088);
+  color: var(--text-color);
+  border: none;
+  padding: 10px;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  width: 50%;
+  cursor: pointer;
+  &:active {
+    color: red;
+  }
+  &:hover {
+    background: rgba(118, 112, 112, 0.323);
+    color: var(--hover);
   }
 }

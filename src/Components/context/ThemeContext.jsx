@@ -9,6 +9,8 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(true);
 
+   const [isOpen, setIsOpen] = useState(false);//navbar 
+
   const toggleTheme = () => {
     setIsDark((prev) => !prev);
   };
@@ -20,7 +22,7 @@ export const ThemeProvider = ({ children }) => {
   }, [isDark]);
 
   return (
-    <themeContext.Provider value={{ theme, toggleTheme }}>
+    <themeContext.Provider value={{ theme, toggleTheme,isOpen,setIsOpen }}>
       {children}
     </themeContext.Provider>
   );

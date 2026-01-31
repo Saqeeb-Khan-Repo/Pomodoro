@@ -38,7 +38,7 @@
   margin-bottom: 10px;
 }
 
-.planner-form  input {
+.planner-form input {
   padding: 10px 14px;
   border: none;
   border-radius: 20px;
@@ -65,7 +65,9 @@
   font-weight: 900;
   background: orange;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
   width: 100%;
 }
 
@@ -76,7 +78,7 @@
 
 /* Separate display box */
 .display-box {
-  background-color:var(--bg-box2);
+  background-color: var(--bg-box2);
   border-radius: 16px;
   padding: 16px 20px;
   max-height: 260px;
@@ -93,7 +95,7 @@
 .display-box .ul {
   color: var(--text-color);
   padding-left: 20px;
- 
+  pointer-events: none;
 }
 
 .li {
@@ -103,9 +105,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-   background: #23222245;
-   border-radius: 5px;
-   text-transform: capitalize;
+  background: #23222245;
+  border-radius: 5px;
+  text-transform: capitalize;
 }
 
 /* Optional: delete button styling */
@@ -117,7 +119,10 @@
   padding: 4px 10px;
   font-size: 0.75rem;
   cursor: pointer;
-  transition: background 0.15s ease, transform 0.15s ease;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+  pointer-events: auto;
 }
 
 .delete:hover {

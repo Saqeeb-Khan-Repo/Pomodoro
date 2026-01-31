@@ -1,37 +1,37 @@
 import { BiWorld } from "react-icons/bi";
 import { GiTomato } from "react-icons/gi";
-import { SlCalender } from "react-icons/sl";
-import { GoClock } from "react-icons/go";
-// import { FaClockRotateLeft } from "react-icons/fa6";
-import { LuAlarmClockCheck } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
+import { useTheme } from "../context/ThemeContext";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const SideBar = () => {
+  const { theme, toggleTheme , setIsOpen , isOpen } = useTheme();
+ 
   return (
     <header className="head head1">
       <nav>
-        <Link to="/timezone">
-          <BiWorld /> TimeZone
-        </Link>
+        <button className="hamburger" onClick={() => setIsOpen(!isOpen)}>
+          <GiHamburgerMenu />
+        </button>
         <Link to="/pomodoro">
           <GiTomato />
           Pomodoro
         </Link>
-        <Link to="/planner">
-          <SlCalender />
-          Daily Planner
-        </Link>
-        <Link to="/worldtime">
-          <GoClock /> World Time
-        </Link>
-        {/* <Link to="/timer">
-          <FaClockRotateLeft /> Timer
-        </Link> */}
-        <Link to="/stopwatch">
-          <LuAlarmClockCheck /> StopWatch
+        <Link to="/timezone">
+          <BiWorld /> TimeZone
         </Link>
       </nav>
+      <div className="mode">
+        <label>
+          <input
+            type="checkbox"
+            onChange={toggleTheme}
+            checked={theme === "light"}
+          />
+          <span className="slider"></span>
+        </label>
+      </div>
     </header>
   );
 };

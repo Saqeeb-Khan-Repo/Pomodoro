@@ -6,7 +6,6 @@ import { ThemeProvider } from "./Components/context/ThemeContext";
 const App = () => {
   const NavBar = lazy(() => import("./Components/Header/NavBar"));
   const StopWatch = lazy(() => import("./Components/StopWatch"));
-  const Home = lazy(() => import("./Home"));
   const TimeZone = lazy(() => import("./Components/pages/TimeZone"));
   const Pomodoro = lazy(() => import("./Components/pages/Pomodoro"));
   const DailyPlanner = lazy(() => import("./Components/pages/DailyPlanner"));
@@ -42,11 +41,11 @@ const App = () => {
         <Suspense>
           <HashRouter>
             <NavBar />
-            <SecondNavBar/>
+            <SecondNavBar />
             <div className="app-main">
               <div className="app-content">
                 <Routes>
-                  <Route path="/" element={<Home />} />
+                  <Route path="/" element={<Pomodoro />} />
                   <Route path="/timezone" element={<TimeZone />} />
                   <Route path="/pomodoro" element={<Pomodoro />} />
                   <Route path="/planner" element={<DailyPlanner />} />
