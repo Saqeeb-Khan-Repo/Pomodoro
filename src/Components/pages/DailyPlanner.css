@@ -11,6 +11,7 @@
   border-radius: 20px;
   padding: 20px;
   gap: 20px;
+  box-shadow: var(--box-shadow2);
 }
 
 /* Inner card holding form + list side-by-side (on big screens) */
