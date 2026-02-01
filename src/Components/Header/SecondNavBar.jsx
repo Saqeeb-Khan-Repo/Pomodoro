@@ -3,7 +3,7 @@ import { GoClock } from "react-icons/go";
 import { LuAlarmClockCheck } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-import { CiGift } from "react-icons/ci";
+// import { CiGift } from "react-icons/ci";
 import { useTheme } from "../context/ThemeContext";
 import { RxCross1 } from "react-icons/rx";
 
@@ -26,10 +26,10 @@ const SecondNavBar = () => {
         <Link to="/stopwatch">
           <LuAlarmClockCheck /> StopWatch
         </Link>
-        <Link className="login" to="/LoginPage">
+        {/* <Link className="login" to="/LoginPage">
           <CiGift className="gift" />
           Login/SignUp
-        </Link>
+        </Link> */}
       </nav>
     </header>
   );

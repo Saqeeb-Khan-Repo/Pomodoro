@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"; // Add useEffect
 import { ClockLoader } from "react-spinners";
 import { lazy, Suspense } from "react";
 import { ThemeProvider } from "./Components/context/ThemeContext";
+import Footer from "./Components/pages/Footer";
 const App = () => {
   const NavBar = lazy(() => import("./Components/Header/NavBar"));
   const StopWatch = lazy(() => import("./Components/StopWatch"));
@@ -58,11 +59,7 @@ const App = () => {
           </HashRouter>
         </Suspense>
       </ThemeProvider>
-      <footer className="footer">
-        <h3 className="h3" style={{ textAlign: "center" }}>
-          @2026 All Rights are Reserverd . Mr khan{" "}
-        </h3>
-      </footer>
+     <Footer/>
     </main>
   );
 };
