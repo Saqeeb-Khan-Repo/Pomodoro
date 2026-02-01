@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./TimeZone.css"
 
 const TimeZone = () => {
   const [times, setTimes] = useState({});

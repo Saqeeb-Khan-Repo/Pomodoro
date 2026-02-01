@@ -1,7 +1,7 @@
 /* 1) Base theme tokens (don’t change across themes) */
 :root {
   --border-radius: 10px;
-  --box-shadow: 0 0 20px rgba(93, 92, 92, 0.332);
+  --box-shadow: 0 0 20px 2px rgba(25, 24, 24, 0.332);
   --primary-color: rgba(4, 4, 4, 0.548);
 }
 
@@ -9,9 +9,12 @@
 :root[data-theme="light"] {
   --bg: #ffffff;
   --text-color: #000000;
-  --bg-box: rgba(66, 64, 64, 0.067);
+  --bg-box: rgba(251, 250, 250, 0.947);
   --bg-box2: rgba(66, 64, 64, 0.067);
   --hover: rgb(222, 31, 18);
+  --bg-slide: rgba(252, 247, 247, 0.959);
+  --box-shadow2: 0 0 10px rgb(188, 184, 184);
+
 }
 
 :root[data-theme="dark"] {
@@ -20,6 +23,8 @@
   --bg-box: rgb(24 24 27);
   --bg-box2: rgb(66, 66, 66);
   --hover: orange;
+  --bg-slide: rgb(32, 32, 32);
+   --box-shadow2: 0 0 10px rgb(33, 33, 33);
 }
 
 /* 3) Global reset & body */
@@ -104,53 +109,6 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* 6) Home container / Pomodoro */  
-.home-container {
-  background-color: var(--bg-box);
-  width: 90%;
-  height: 70dvh;
-  margin: 50px auto;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  border: 1px solid rgba(94, 92, 92, 0.362);
-}
-
-.timer-display {
-  font-size: 4rem;
-  font-weight: bold;
-  font-family: monospace;
-  margin: 2rem 0;
-  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* 7) Controls */
-.controls button {
-  margin: 0.5rem;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  background:var(--bg-box2);
-  color:var(--text-color);
-  transition:
-    background 0.3s,
-    transform 0.15s;
-  font-weight: 700;
-}
-
-.controls button:hover {
-  background: #38393956;
-  transform: translateY(-1px);
-}
-
 /* 8) Gradient text usage */
 .heading,
 .form label,
@@ -161,13 +119,15 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.container-li  li{
+.container-li li {
   color: var(--text-color);
   text-align: center;
   list-style: none;
 
+  padding: 10px;
+  margin-top: 2px;
 }
-.container-li{
+.container-li {
   margin-top: 20px;
 }
 
@@ -179,6 +139,7 @@ body {
   margin: 50px auto;
   border-radius: 20px;
   border: 1px solid rgba(94, 92, 92, 0.362);
+  box-shadow: var(--box-shadow2);
 }
 
 .clocks-grid {
@@ -240,38 +201,6 @@ body {
   font-weight: 500;
 }
 
-/* 11) Form */
-.form {
-  display: flex;
-  flex-direction: column;
-  font-size: 2rem;
-  width: 70%;
-  max-width: 400px;
-  height: 70%;
-  justify-content: center;
-}
-
-.form input {
-  padding: 10px;
-  border: none;
-  font-size: 1rem;
-  background-color: #2b2a29;
-  font-weight: 700;
-  border-radius: 5px;
-  color: whitesmoke;
-}
-
-.form .btn {
-  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-  font-weight: 800;
-  margin-top: 20px;
-}
-
-.heading {
-  font-size: 3rem;
-  text-align: center;
-}
-
 /* 12) Footer */
 .footer {
   background-color: var(--bg-box);
@@ -287,36 +216,6 @@ body {
 .h3 {
   font-size: 1rem;
   font-weight: 800;
-}
-
-/* 13) Main clock */
-.clock {
-  display: flex;
-  width: 100%;
-  height: 300px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.15s;
-}
-
-.clock:hover {
-  transform: translateY(-5px);
-}
-
-.zone {
-  font-size: 2rem;
-}
-
-.times {
-  font-size: 3rem;
-  font-weight: 700;
-}
-.h2{
-  font-size: 2rem;
 }
 
 /* 14) Responsive */

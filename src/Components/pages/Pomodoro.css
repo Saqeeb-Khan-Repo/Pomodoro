@@ -1,0 +1,49 @@
+
+/* 6) Home container / Pomodoro */
+.home-container {
+  background-color: var(--bg-box);
+  width: 90%;
+  height: 70dvh;
+  margin: 50px auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid rgba(94, 92, 92, 0.362);
+  box-shadow: var(--box-shadow);
+}
+
+.timer-display {
+  font-size: 5rem;
+  font-weight: bold;
+  font-family: monospace;
+  margin: 2rem 0;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 7) Controls */
+.controls button {
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: var(--bg-box2);
+  color: var(--text-color);
+  box-shadow: var(--box-shadow2);
+  transition:
+    background 0.3s,
+    transform 0.15s;
+  font-weight: 700;
+}
+
+.controls button:hover {
+  background: rgb(241, 181, 68);
+  transform: translateY(-4px);
+}

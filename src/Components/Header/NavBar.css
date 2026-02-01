@@ -86,7 +86,7 @@
   left: -260px;
   width: 250px;
   height: 100vh;
-  background: var(--bg-box);
+  background: var(--bg-slide);
   color: white;
   padding: 20px;
   transition: left 0.3s ease;
@@ -107,7 +107,7 @@
 }
 .sideContainer {
   display: flex;
-  background-color: var(--bg-box);
+  background-color: var(--bg-slide);
   cursor: pointer;
   overflow: hidden;
   justify-content: center;
@@ -148,7 +148,6 @@
   padding: 10px;
   border-radius: 30px;
   font-size: 1.5rem;
-  width: 50%;
   cursor: pointer;
   &:active {
     color: red;
@@ -156,5 +155,7 @@
   &:hover {
     background: rgba(118, 112, 112, 0.323);
     color: var(--hover);
+    transform: rotate(180deg);
+    transition: 1s ease-in;
   }
 }

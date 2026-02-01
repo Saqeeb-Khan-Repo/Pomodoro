@@ -9,6 +9,7 @@
   border: 1px solid rgba(94, 92, 92, 0.362);
   margin: 50px auto;
   border-radius: 20px;
+  box-shadow: var(--box-shadow2);
 }
 .stopwatch {
   display: flex;
@@ -28,8 +29,8 @@
   background-clip: text;
 }
 .container button {
-  background-color: rgba(128, 128, 128, 0.11);
-  color: white;
+  background-color:var(--bg-box2);
+  color: var(--text-color);
   padding: 10px;
   border: none;
   border-radius: 10px;
