@@ -12,7 +12,7 @@ const App = () => {
   const DailyPlanner = lazy(() => import("./Components/pages/DailyPlanner"));
   const LoginPage = lazy(() => import("./Components/pages/LoginPage"));
   const WorldTime = lazy(() => import("./Components/pages/WorldTime"));
-  const SecondNavBar = lazy(() => import("./Components/Header/SecondNavBar"))
+  const SecondNavBar = lazy(() => import("./Components/Header/SecondNavBar"));
 
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -20,7 +20,7 @@ const App = () => {
     // Simulate loading (or wait for API/images), then show app
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 1500); // 1.5s loading screen
+    }, 800); // 1.5s loading screen
 
     return () => clearTimeout(timer);
   }, []);
@@ -59,7 +59,7 @@ const App = () => {
           </HashRouter>
         </Suspense>
       </ThemeProvider>
-     <Footer/>
+      <Footer />
     </main>
   );
 };

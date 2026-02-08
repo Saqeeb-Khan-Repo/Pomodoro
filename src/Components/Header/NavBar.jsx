@@ -1,9 +1,10 @@
-import { BiWorld } from "react-icons/bi";
 import { GiTomato } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 import { useTheme } from "../context/ThemeContext";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { SlCalender } from "react-icons/sl";
+
 
 const SideBar = () => {
   const { theme, toggleTheme , setIsOpen , isOpen } = useTheme();
@@ -19,9 +20,11 @@ const SideBar = () => {
             <GiTomato />
             Pomodoro
           </Link>
-          <Link to="/timezone">
-            <BiWorld /> TimeZone
-          </Link>
+           <Link to="/planner">
+                    <SlCalender />
+                    Daily Planner
+                  </Link>
+        
         </nav>
         <div className="mode">
           <label>
