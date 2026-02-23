@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 /* 1) Base theme tokens (don’t change across themes) */
 :root {
   --border-radius: 10px;
@@ -14,7 +16,6 @@
   --hover: rgb(222, 31, 18);
   --bg-slide: rgba(252, 247, 247, 0.959);
   --box-shadow2: 0 0 10px rgb(188, 184, 184);
-
 }
 
 :root[data-theme="dark"] {
@@ -24,7 +25,7 @@
   --bg-box2: rgb(66, 66, 66);
   --hover: orange;
   --bg-slide: rgb(32, 32, 32);
-   --box-shadow2: 0 0 10px rgb(33, 33, 33);
+  --box-shadow2: 0 0 10px rgb(33, 33, 33);
 }
 
 /* 3) Global reset & body */
@@ -200,7 +201,6 @@ body {
   font-size: 1.2rem;
   font-weight: 500;
 }
-
 
 /* 14) Responsive */
 @media (max-width: 700px) {

@@ -20,7 +20,7 @@ const App = () => {
     // Simulate loading (or wait for API/images), then show app
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 800); // 1.5s loading screen
+    },300); // 3ms loading screen
 
     return () => clearTimeout(timer);
   }, []);
